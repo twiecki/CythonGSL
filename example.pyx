@@ -1,4 +1,4 @@
-cimport cython_gsl
+from cython_gsl import gsl
 
 ctypedef double * double_ptr
 ctypedef void * void_ptr
@@ -9,5 +9,5 @@ cdef extern from "stdlib.h":
     void* realloc(void* ptr, size_t size)
 
 cpdef Normal(double x, double sigma):
-    return cython_gsl.gsl_ran_gaussian_pdf(x, sigma)
+    return gsl.gsl_ran_gaussian_pdf(x, sigma)
 
