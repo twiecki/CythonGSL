@@ -22,3 +22,7 @@ def get_library_dir():
 
     return [lib_gsl_dir]
 
+def get_cython_include_dir():
+    import cython_gsl
+    return [cython_gsl.__path__]
+
