@@ -40,26 +40,12 @@ Here is what a setup.py could look like:
     from distutils.extension import Extension
     from Cython.Distutils import build_ext
     import numpy as np
-    import os
-    import sys
-    print sys.platform
-
-    if sys.platform == "win32":
-        # Hardcoded paths under windows :-/
-        gsl_include = r"c:\Program Files\GnuWin32\include"
-        lib_gsl_dir = r"c:\Program Files\GnuWin32\lib"
-    else:
-        gsl_include = os.popen('gsl-config --cflags').read()[2:-1]
-        lib_gsl_dir = ''
-
-    if gsl_include == '':
-        print "Couldn't find gsl. Make sure it's installed and in the path."
-        sys.exit(-1)
+    import cython_gsl
 
     setup(
         [...]
-        include_dirs = [np.get_include(), gsl_include],
+        include_dirs = [np.get_include(), cython_gsl.get_include()],
         cmdclass = {'build_ext': build_ext},
-        ext_modules = [Extension("my_cython_script", ["src/my_cython_script.pyx"], libraries=['gsl','gslcblas'], library_dirs=[lib_gsl_dir])]
+        ext_modules = [Extension("my_cython_script", ["src/my_cython_script.pyx"], libraries=['gsl','gslcblas'], library_dirs=cython_gsl.get_library_dir())]
         )
 

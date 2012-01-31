@@ -5,13 +5,6 @@ import numpy as np
 import os
 import cython_gsl
 
-gsl_include = os.popen('gsl-config --cflags').read()[2:-1]
-
-if gsl_include == '':
-    print "Couldn't find gsl-config. Make sure it's installed and in the path."
-    import sys
-    sys.exit(-1)
-
 setup(
     name="integrate",
     version="0.1",
@@ -21,7 +14,7 @@ setup(
     description="CythonGSL example integrate.",
     install_requires=['NumPy >=1.3.0'],
     setup_requires=['NumPy >=1.3.0'],
-    include_dirs = [np.get_include(), gsl_include],
+    include_dirs = [np.get_include(), cython_gsl.get_include()],
     cmdclass = {'build_ext': build_ext},
     classifiers=[
                 'Development Status :: 3 - Alpha',
@@ -32,6 +25,6 @@ setup(
                 'Programming Language :: Python',
                 'Topic :: Scientific/Engineering',
                  ],
-    ext_modules = [Extension("integrate", ["integrate.pyx"], libraries=['gsl','gslcblas'], cython_include_dirs=cython_gsl.__path__)]
+    ext_modules = [Extension("integrate", ["integrate.pyx"], libraries=['gsl','gslcblas'], library_dirs=cython_gsl.get_library_dir())]
 )
 
