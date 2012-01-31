@@ -35,7 +35,7 @@ For more examples, check out the examples directory.
 Compilation
 ***********
 
-Here is what a setup.py could look like:
+Here is what your setup.py could look like:
 
 ::
 
