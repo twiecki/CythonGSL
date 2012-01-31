@@ -1,6 +1,13 @@
 #!/usr/bin/env python
 from distutils.core import setup
 from distutils.extension import Extension
+import os.path
+import Cython
+
+cython_dir = os.path.split(Cython.__file__)[0]
+cython_include_dir = os.path.join(cython_dir, 'Includes')
+
+print "Install cython-gsl like this:\n python setup.py build\n python setup.py install --install-lib=%s" % cython_include_dir
 
 setup(
     name="cython_gsl",
