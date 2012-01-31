@@ -14,6 +14,11 @@ Dependencies
 * Cython
 * GSL (for a windows port see http://gnuwin32.sourceforge.net/packages/gsl.htm)
 
+Installation
+************
+
+Execute setup.py which will tell you how to install cython_gsl in the correct way. Make sure to include the --install-lib flag when installing.
+
 Usage
 *****
 
