@@ -1,7 +1,7 @@
 CythonGSL
 *********
 
-CythonGSL provides a Cython interface for the GNU Scientific Library (GSL).
+CythonGSL provides a set of Cython declarations for the GNU Scientific Library (GSL).
 
 Cython is the ideal tool to speed up numerical computations. While SciPy provides many numerical tools such as optimizers and integrators they still are not as fast as they could be because of the Python function call overhead (even if your evaluation function is written cython). CythonGSL allows you to shave off that last layer by calling directly into the c functions from your Cython code.
 
@@ -23,7 +23,7 @@ Usage
 *****
 
 In your cython file from which you want to call gsl routines, import gsl:
->>> include "CythonGSL/gsl.pxi"
+>>> from cython_gsl cimport *
 
 From there you should be able to call any gsl function, see http://www.gnu.org/software/gsl/manual/gsl-ref.html for the GSL reference.
 

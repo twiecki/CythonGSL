@@ -10,14 +10,14 @@ cython_include_dir = os.path.join(cython_dir, 'Includes')
 print "Install cython-gsl like this:\n python setup.py build\n python setup.py install --install-lib=%s" % cython_include_dir
 
 setup(
-    name="cython_gsl",
+    name="CythonGSL",
     version="0.1a",
     author="Thomas V. Wiecki",
     author_email="thomas_wiecki@brown.edu",
     url="http://github.com/twiecki/CythonGSL",
     packages=["cython_gsl"],
     package_data={"cython_gsl":["*.pxi", "*.pxd"]},
-    description="""Cython wrapper for the Gnu Scientific Library.""",
+    description="""Cython declarations for the Gnu Scientific Library.""",
     classifiers=[
                 'Development Status :: 4 - Beta',
                 'Environment :: Console',
