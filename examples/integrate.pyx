@@ -1,4 +1,4 @@
-from cython_gsl import gsl
+from cython_gsl cimport gsl
 cimport libc.math
 
 ctypedef double * double_ptr
