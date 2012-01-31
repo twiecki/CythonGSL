@@ -22,6 +22,11 @@ setup(
                 'Programming Language :: Python',
                 'Topic :: Scientific/Engineering',
                  ],
-    ext_modules = [Extension("integrate", ["integrate.pyx"], libraries=['gsl','gslcblas'], library_dirs=cython_gsl.get_library_dir(), cython_include_dirs=cython_gsl.get_cython_include_dir())]
+
+    ext_modules = [Extension("integrate",
+                             ["integrate.pyx"],
+                             libraries=['gsl','gslcblas'],
+                             library_dirs=cython_gsl.get_library_dir(),
+                             cython_include_dirs=cython_gsl.get_cython_include_dir())]
 )
 
