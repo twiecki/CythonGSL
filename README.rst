@@ -40,7 +40,7 @@ Here is what your setup.py could look like:
 ::
 
     from distutils.core import setup
-    from distutils.extension import Extension
+    from Cython.Distutils import Extension
     from Cython.Distutils import build_ext
     import cython_gsl
 
@@ -48,6 +48,6 @@ Here is what your setup.py could look like:
         [...]
         include_dirs = [cython_gsl.get_include()],
         cmdclass = {'build_ext': build_ext},
-        ext_modules = [Extension("my_cython_script", ["src/my_cython_script.pyx"], libraries=['gsl','gslcblas'], library_dirs=cython_gsl.get_library_dir())]
+        ext_modules = [Extension("my_cython_script", ["src/my_cython_script.pyx"], libraries=['gsl','gslcblas'], library_dirs=cython_gsl.get_library_dir(), cython_include_dirs=cython_gsl.get_cython_include_dir())]
         )
 

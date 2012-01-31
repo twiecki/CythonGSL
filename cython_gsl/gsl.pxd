@@ -6,7 +6,6 @@ cdef enum:
 ctypedef int size_t
 cimport cython_gsl.gsl_mode
 cimport cython_gsl.gsl_math
-#from cython_gsl.gsl_complex cimport *
 cimport cython_gsl.gsl_complex
 cimport cython_gsl.gsl_poly
 cimport cython_gsl.gsl_sf_result
