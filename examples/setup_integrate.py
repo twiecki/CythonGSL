@@ -3,6 +3,7 @@ from distutils.extension import Extension
 from Cython.Distutils import build_ext
 import numpy as np
 import os
+import cython_gsl
 
 gsl_include = os.popen('gsl-config --cflags').read()[2:-1]
 
@@ -31,6 +32,6 @@ setup(
                 'Programming Language :: Python',
                 'Topic :: Scientific/Engineering',
                  ],
-    ext_modules = [Extension("integrate", ["integrate.pyx"], libraries=['gsl','gslcblas'])]
+    ext_modules = [Extension("integrate", ["integrate.pyx"], libraries=['gsl','gslcblas'], cython_include_dirs=cython_gsl.__path__)]
 )
 
