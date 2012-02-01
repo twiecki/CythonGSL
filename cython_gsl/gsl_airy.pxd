@@ -1,3 +1,8 @@
+#    CythonGSL Copyright (C) 2012  Thomas V. Wiecki
+#    This program comes with ABSOLUTELY NO WARRANTY; for details type `show w'.
+#    This is free software, and you are welcome to redistribute it
+#    under certain conditions; type `show c' for details.
+
 from cython_gsl cimport *
 
 cdef extern from "gsl/gsl_sf_airy.h":

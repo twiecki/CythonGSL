@@ -1,0 +1,1 @@
+include README.rst LICENSE examples/*.py examples/*.pyx
