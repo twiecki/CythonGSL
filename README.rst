@@ -1,5 +1,17 @@
-CythonGSL
-*********
+************
+Introduction
+************
+
+:Date: Februar 1, 2012
+:Version: 0.1
+:Authors: Thomas Wiecki
+:Web site: https://github.com/twiecki/CythonGSL
+:Copyright: This document has been placed in the public domain.
+:License: CythonGSL is released under the GPLv3.
+
+
+Purpose
+=======
 
 CythonGSL provides a set of Cython declarations for the GNU Scientific
 Library (GSL).
@@ -18,25 +30,12 @@ any Python overhead.
 Fork of PyrexGsl by Mario Pernici
 (http://wwwteor.mi.infn.it/~pernici/pyrexgsl/pyrexgsl.html).
 
-Dependencies
-************
-
-* Python
-* Cython (http://cython.org)
-* GSL (for a windows port see
-  http://gnuwin32.sourceforge.net/packages/gsl.htm)
-
-Installation
-************
-
-::
-
-    python setup.py build
-    python setup.py install
-
-
+*****
 Usage
 *****
+
+Import CythonGSL in your pyx file
+=================================
 
 In your cython file from which you want to call gsl routines, import
 gsl like this:
@@ -51,8 +50,8 @@ reference.
 
 For more examples, check out the examples directory.
 
-Compilation
-***********
+Compile your module
+===================
 
 Here is what your setup.py could look like:
 
@@ -73,4 +72,26 @@ Here is what your setup.py could look like:
 				 library_dirs=cython_gsl.get_library_dir(),
 				 cython_include_dirs=cython_gsl.get_cython_include_dir())]
         )
+
+
+************
+Installation
+************
+
+Dependencies
+============
+
+* Python
+* Cython (http://cython.org)
+* GSL (for a windows port see
+  http://gnuwin32.sourceforge.net/packages/gsl.htm)
+
+Installation
+============
+
+::
+
+    python setup.py build
+    python setup.py install
+
 
