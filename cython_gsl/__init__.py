@@ -34,9 +34,12 @@ def get_library_dir():
         # Hardcoded paths under windows :-/
         lib_gsl_dir = r"c:\Program Files\GnuWin32\lib"
     else:
-        lib_gsl_dir = ''
+        lib_gsl_dir = os.popen('gsl-config --libs').read().split()[0][2:]
 
     return [lib_gsl_dir]
+
+def get_libraries():
+    return ['gsl', 'gslcblas']
 
 def get_cython_include_dir():
     import cython_gsl, os.path
