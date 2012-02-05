@@ -3,7 +3,7 @@ Introduction
 ************
 
 :Date: Februar 1, 2012
-:Version: 0.1
+:Version: 0.1.1
 :Authors: Thomas Wiecki
 :Web site: https://github.com/twiecki/CythonGSL
 :Copyright: This document has been placed in the public domain.
