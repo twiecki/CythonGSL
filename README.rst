@@ -67,10 +67,10 @@ Here is what your setup.py could look like:
         include_dirs = [cython_gsl.get_include()],
         cmdclass = {'build_ext': build_ext},
         ext_modules = [Extension("my_cython_script",
-		                 ["src/my_cython_script.pyx"],
-				 libraries=cython_gsl.get_library_dir(),
-				 library_dirs=cython_gsl.get_library_dir(),
-				 cython_include_dirs=cython_gsl.get_cython_include_dir())]
+   	                             ["src/my_cython_script.pyx"],
+                				 libraries=cython_gsl.get_library(),
+				                 library_dirs=cython_gsl.get_library_dir(),
+                				 cython_include_dirs=cython_gsl.get_cython_include_dir())]
         )
 
 
