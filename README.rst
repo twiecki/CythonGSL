@@ -3,8 +3,8 @@ Introduction
 ************
 
 :Date: Februar 1, 2012
-:Version: 0.1.1
-:Authors: Thomas Wiecki
+:Version: 0.1.2alpha
+:Authors: Thomas Wiecki, thomas.wiecki[at]gmail.com
 :Web site: https://github.com/twiecki/CythonGSL
 :Copyright: This document has been placed in the public domain.
 :License: CythonGSL is released under the GPLv3.
@@ -67,10 +67,10 @@ Here is what your setup.py could look like:
         include_dirs = [cython_gsl.get_include()],
         cmdclass = {'build_ext': build_ext},
         ext_modules = [Extension("my_cython_script",
-   	                             ["src/my_cython_script.pyx"],
-                				 libraries=cython_gsl.get_library(),
-				                 library_dirs=cython_gsl.get_library_dir(),
-                				 cython_include_dirs=cython_gsl.get_cython_include_dir())]
+				 ["src/my_cython_script.pyx"],
+				 libraries=cython_gsl.get_library(),
+				 library_dirs=cython_gsl.get_library_dir(),
+				 cython_include_dirs=cython_gsl.get_cython_include_dir())]
         )
 
 
