@@ -6,7 +6,7 @@ import Cython
 
 setup(
     name="CythonGSL",
-    version="0.1.2",
+    version="0.1.3alpha",
     author="Thomas V. Wiecki",
     author_email="thomas_wiecki@brown.edu",
     url="http://github.com/twiecki/CythonGSL",
