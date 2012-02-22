@@ -13,7 +13,7 @@ Introduction
 Purpose
 =======
 
-CythonGSL provides a set of Cython declarations for the GNU Scientific
+CythonGSL provides a Cython interface for the GNU Scientific
 Library (GSL).
 
 Cython is the ideal tool to speed up numerical computations by
@@ -69,8 +69,8 @@ Here is what your setup.py could look like:
         ext_modules = [Extension("my_cython_script",
 				 ["src/my_cython_script.pyx"],
 				 libraries=cython_gsl.get_library(),
-				 library_dirs=cython_gsl.get_library_dir(),
-				 cython_include_dirs=cython_gsl.get_cython_include_dir())]
+				 library_dirs=[cython_gsl.get_library_dir()],
+				 cython_include_dirs=[cython_gsl.get_cython_include_dir()])]
         )
 
 

@@ -36,12 +36,12 @@ def get_library_dir():
     else:
         lib_gsl_dir = os.popen('gsl-config --libs').read().split()[0][2:]
 
-    return [lib_gsl_dir]
+    return lib_gsl_dir
 
 def get_libraries():
     return ['gsl', 'gslcblas']
 
 def get_cython_include_dir():
     import cython_gsl, os.path
-    return os.path.split(cython_gsl.__path__[0])[:-1]
+    return os.path.split(cython_gsl.__path__[0])[0]
 
