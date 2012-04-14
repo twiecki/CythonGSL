@@ -7,7 +7,7 @@ cdef double normal(double x, void * params) nogil:
     cdef double mu = (<double_ptr> params)[0]
     cdef double sigma = (<double_ptr> params)[1]
 
-    return gsl_ran_gaussian_pdf(x, sigma) + mu
+    return gsl_ran_gaussian_pdf(x - mu, sigma)
 
 def cdf_numerical(double x, double mu, double sigma):
     cdef double alpha, result, error, expected
