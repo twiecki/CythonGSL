@@ -200,6 +200,9 @@ cdef extern from "gsl/gsl_cdf.h":
   double gsl_cdf_beta_P ( double x,  double a,  double b) nogil
   double gsl_cdf_beta_Q ( double x,  double a,  double b) nogil
 
+  double gsl_cdf_beta_Pinv ( double P,  double a,  double b) nogil
+  double gsl_cdf_beta_Qinv ( double Q,  double a,  double b) nogil
+
   double gsl_cdf_flat_P ( double x,  double a,  double b) nogil
   double gsl_cdf_flat_Q ( double x,  double a,  double b) nogil
 
