@@ -1,4 +1,4 @@
-include "gsl.pxi"
+from cython_gsl cimport *
 
 cdef double f (double x, void * params):
   return pow (x, 1.5)

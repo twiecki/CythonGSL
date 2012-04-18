@@ -1,4 +1,4 @@
-include "gsl.pxi"
+from cython_gsl cimport *
 
 def main():
   x = [2.2, 0.4]

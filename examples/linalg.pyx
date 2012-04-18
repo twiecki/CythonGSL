@@ -1,4 +1,4 @@
-include "gsl.pxi"
+from cython_gsl cimport *
 
 def main():
   cdef double a_data[16], b_data[4]

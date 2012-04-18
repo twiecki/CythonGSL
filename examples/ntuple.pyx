@@ -1,4 +1,4 @@
-include "gsl.pxi"
+from cython_gsl cimport *
 
 cdef struct data:
   double x

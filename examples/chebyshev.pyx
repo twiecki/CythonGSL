@@ -1,4 +1,4 @@
-include "gsl.pxi"
+from cython_gsl cimport *
 
 cdef double f (double x, void *p):
   if (x < 0.5):

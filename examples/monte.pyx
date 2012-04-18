@@ -1,4 +1,4 @@
-include "gsl.pxi"
+from cython_gsl cimport *
 
 cdef double exact 
 exact = 1.3932039296856768591842462603255

@@ -1,4 +1,4 @@
-include "gsl.pxi"
+from cython_gsl cimport *
 
 cdef extern from "stdlib.h":
   void *malloc(size_t size)

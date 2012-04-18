@@ -1,4 +1,4 @@
-include "gsl.pxi"
+from cython_gsl cimport *
 
 cdef double fn1 (double x, void * params):
   return cos(x) + 1.0

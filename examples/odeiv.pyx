@@ -1,4 +1,4 @@
-include "gsl.pxi"
+from cython_gsl cimport *
 
 
 cdef int func (double t,  double y[], double f[], void *params):
