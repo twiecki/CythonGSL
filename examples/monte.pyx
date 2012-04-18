@@ -1,9 +1,11 @@
+#cython: cdivision=True
+
 from cython_gsl cimport *
 
 cdef double exact 
 exact = 1.3932039296856768591842462603255
 
-cdef double g (double *k, size_t dim, void *params):
+cdef double g (double *k, size_t dim, void *params) nogil:
   cdef double A
   A = 1.0 / (M_PI * M_PI * M_PI)
   return A / (1.0 - cos (k[0]) * cos (k[1]) * cos (k[2]))

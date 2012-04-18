@@ -1,6 +1,6 @@
 from cython_gsl cimport *
 
-cdef double f (double x, void * params):
+cdef double f (double x, void * params) nogil:
   return pow (x, 1.5)
 
 def main ():

@@ -1,6 +1,6 @@
 from cython_gsl cimport *
 
-cdef double f (double x, void *p):
+cdef double f (double x, void *p) nogil:
   if (x < 0.5):
     return 0.25
   else:

@@ -1,14 +1,14 @@
 from cython_gsl cimport *
 
 
-cdef int func (double t,  double y[], double f[], void *params):
+cdef int func (double t,  double y[], double f[], void *params) nogil:
   cdef double mu 
   mu = (<double *> params)[0]
   f[0] = y[1]
   f[1] = -y[0] - mu*y[1]*(y[0]*y[0] - 1)
   return GSL_SUCCESS
 
-cdef int jac (double t,  double y[], double *dfdy, double dfdt[], void *params):
+cdef int jac (double t,  double y[], double *dfdy, double dfdt[], void *params) nogil:
   cdef double mu 
   mu = (<double *>params)[0]
   cdef gsl_matrix_view dfdy_mat 

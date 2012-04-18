@@ -7,7 +7,7 @@ cdef struct data:
 
 
 
-cdef int sel_func (void *ntuple_data, void *params):
+cdef int sel_func (void *ntuple_data, void *params) nogil:
   cdef data * data1 
   data1 = <data *> ntuple_data  
   cdef double x, y, z, E2, scale
@@ -21,7 +21,7 @@ cdef int sel_func (void *ntuple_data, void *params):
 
   return E2 > scale
 
-cdef double val_func (void *ntuple_data, void *params):
+cdef double val_func (void *ntuple_data, void *params) nogil:
   cdef data * data1 
   data1 = <data *> ntuple_data  
   cdef double x, y, z

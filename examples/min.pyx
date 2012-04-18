@@ -1,6 +1,6 @@
 from cython_gsl cimport *
 
-cdef double fn1 (double x, void * params):
+cdef double fn1 (double x, void * params) nogil:
   return cos(x) + 1.0
 
 def main ():

@@ -1,9 +1,11 @@
+#cython: cdivision=True
+
 from cython_gsl cimport *
 
 ctypedef double * double_ptr
 ctypedef void * void_ptr
 
-cdef double foo(double x, void * params):
+cdef double foo(double x, void * params) nogil:
   cdef double alpha, f
   alpha = (<double_ptr> params)[0]
   f = log(alpha*x) / sqrt(x)
