@@ -33,20 +33,7 @@ def main():
 
     cdef double GSL_CONTINUE
     GSL_CONTINUE = -2  # to go...
-    iter = iter + 1
-    status = gsl_min_fminimizer_iterate(s)
-
-    m = gsl_min_fminimizer_x_minimum(s)
-    a = gsl_min_fminimizer_x_lower(s)
-    b = gsl_min_fminimizer_x_upper(s)
-
-    status = gsl_min_test_interval(a, b, 0.001, 0.0)
-
-    if (status == GSL_SUCCESS):
-        print ("Converged:\n")
-
-    print "%5d [%.7f, %.7f] %.7f %.7f %+.7f %.7f\n" % \
-            (iter, a, b, m, m_expected, m - m_expected, b - a)
+    status = -2
 
     while (status == GSL_CONTINUE and iter < max_iter):
         iter = iter + 1
