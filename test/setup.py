@@ -18,12 +18,12 @@ for pyxfile in glob('*.pyx'):
     ext_modules.append(ext)
 
 setup(
-    name="CythonGSL_examples",
+    name="CythonGSL_test",
     version="0.2",
     author="Thomas V. Wiecki",
     author_email="thomas_wiecki@brown.edu",
     url="http://github.com/twiecki/CythonGSL",
-    description="CythonGSL example integrate.",
+    description="CythonGSL unittests.",
     include_dirs = [np.get_include(), cython_gsl.get_include()],
     cmdclass = {'build_ext': build_ext},
     classifiers=[
