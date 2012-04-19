@@ -26,10 +26,10 @@ def main():
     print "using %s method\n" % gsl_min_fminimizer_name(s)
 
     print "%5s [%9s, %9s] %9s %10s %9s\n" % \
-      ("iter", "lower", "upper", "min", "err", "err(est)")
+          ("iter", "lower", "upper", "min", "err", "err(est)")
 
     print "%5d [%.7f, %.7f] %.7f %+.7f %.7f\n" % \
-            (iter, a, b, m, m - m_expected, b - a)
+          (iter, a, b, m, m - m_expected, b - a)
 
     cdef double GSL_CONTINUE
     GSL_CONTINUE = -2  # to go...
@@ -62,6 +62,7 @@ def main():
             print ("Converged:\n")
 
         print "%5d [%.7f, %.7f] %.7f %.7f %+.7f %.7f\n" % \
-                  (iter, a, b, m, m_expected, m - m_expected, b - a)
+              (iter, a, b, m, m_expected, m - m_expected, b - a)
 
     return status
+
