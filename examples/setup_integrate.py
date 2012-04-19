@@ -29,4 +29,3 @@ setup(
                              library_dirs=[cython_gsl.get_library_dir()],
                              cython_include_dirs=[cython_gsl.get_cython_include_dir()])]
 )
-

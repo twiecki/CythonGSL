@@ -1,10 +1,10 @@
 from cython_gsl cimport *
 
 def main():
-  x = [2.2, 0.4]
-  Z = x[0]; r = x[1]
-  res = gsl_sf_hydrogenicR_1(Z, r)
-  print res
+    x = [2.2, 0.4]
+    Z = x[0]; r = x[1]
+    res = gsl_sf_hydrogenicR_1(Z, r)
+    print res
 
 '''
 puts "Normalized Hydrogenic Bound States"
