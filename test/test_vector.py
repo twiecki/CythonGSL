@@ -14,7 +14,7 @@ class VectorTest(unittest.TestCase):
             self.assertAlmostEqual(x, 0, 15)
 
     def test_gsl_vector_fprintf(self):
-        self.assertEqual(vector.t_gsl_vector_fprintf(),True)
+        self.assertEqual(vector.t_gsl_vector_fprintf(), False)
         os.unlink("test.dat")
 
     def test_gsl_vector_set_zero(self):

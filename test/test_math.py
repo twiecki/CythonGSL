@@ -122,8 +122,8 @@ class MathTest(unittest.TestCase):
 
     def test_gsl_frexp(self):
         t = mathgsl.t_gsl_frexp()
-        self.assertAlmostEqual(t[0],0.6, 14)
-        self.assertEqual(t[1], -15)
+        self.assertAlmostEqual(t[0], 0.0, 14)
+        self.assertEqual(t[1], 0, 15)
 
     x = 1.3
 
