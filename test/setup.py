@@ -7,12 +7,15 @@ import cython_gsl
 from glob import glob
 from os.path import splitext
 
-ext = Extension('tests',
-                glob('*.pyx'),
-                libraries=cython_gsl.get_libraries(),
-                library_dirs=[cython_gsl.get_library_dir()],
-                cython_include_dirs=[cython_gsl.get_cython_include_dir()])
+ext_modules = []
+for pyxfile in glob('*.pyx'):
+    ext = Extension(splitext(pyxfile)[0],
+                    [pyxfile],
+                    libraries=cython_gsl.get_libraries(),
+                    library_dirs=[cython_gsl.get_library_dir()],
+                    cython_include_dirs=[cython_gsl.get_cython_include_dir()])
 
+    ext_modules.append(ext)
 
 setup(
     name="CythonGSL_test",
@@ -32,5 +35,5 @@ setup(
                 'Programming Language :: Python',
                 'Topic :: Scientific/Engineering',
                  ],
-    ext_modules = [ext]
+    ext_modules = ext_modules
 )
