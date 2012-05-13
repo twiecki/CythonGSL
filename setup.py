@@ -5,7 +5,7 @@ from Cython.Distutils import build_ext
 
 setup(
     name="CythonGSL",
-    version="0.1.3alpha",
+    version="0.2",
     author="Thomas V. Wiecki",
     author_email="thomas.wiecki@gmail.com",
     url="http://github.com/twiecki/CythonGSL",
