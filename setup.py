@@ -1,14 +1,13 @@
 #!/usr/bin/env python
 from distutils.core import setup
-from distutils.extension import Extension
-import os.path
-import Cython
+from Cython.Distutils import Extension
+from Cython.Distutils import build_ext
 
 setup(
     name="CythonGSL",
     version="0.1.3alpha",
     author="Thomas V. Wiecki",
-    author_email="thomas_wiecki@brown.edu",
+    author_email="thomas.wiecki@gmail.com",
     url="http://github.com/twiecki/CythonGSL",
     packages=["cython_gsl"],
     package_data={"cython_gsl":["*.pxd"]},

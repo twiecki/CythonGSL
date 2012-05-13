@@ -86,12 +86,18 @@ Dependencies
 * GSL (for a windows port see
   http://gnuwin32.sourceforge.net/packages/gsl.htm)
 
-Installation
-============
+Installing CythonGSL
+====================
 
 ::
 
     python setup.py build
     python setup.py install
 
+Installing CythonGSL Unittests
+==============================
 
+::
+    python setup_test.py build
+    python setup_test.py install
+    nosetest cython_gsl
