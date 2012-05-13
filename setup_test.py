@@ -20,7 +20,7 @@ for pyxfile in glob(os.path.join('cython_gsl', 'test', '*.pyx')):
 
 setup(
     name="CythonGSL_test",
-    version="0.2",
+    version="0.2.1alpha",
     author="Thomas V. Wiecki",
     author_email="thomas.wiecki@gmail.com",
     url="http://github.com/twiecki/CythonGSL",
