@@ -16,6 +16,8 @@ cdef extern from "gsl/gsl_randist.h":
 
   double gsl_ran_exppow ( gsl_rng * r,  double a,  double b) nogil
   double gsl_ran_exppow_pdf ( double x,  double a,  double b) nogil
+  double gsl_cdf_exppow_P (double x, double a, double b) nogil
+  double gsl_cdf_exppow_Q (double x, double a, double b) nogil
 
   double gsl_ran_cauchy ( gsl_rng * r,  double a) nogil
   double gsl_ran_cauchy_pdf ( double x,  double a) nogil
