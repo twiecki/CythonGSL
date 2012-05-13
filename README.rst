@@ -98,6 +98,8 @@ Installing CythonGSL Unittests
 ==============================
 
 ::
+
     python setup_test.py build
     python setup_test.py install
     nosetest cython_gsl
+
