@@ -8,8 +8,9 @@ using conditional distributions:
 x|y \sim Gamma(3, y^2 +4)
 y|x \sim Normal(\frac{1}{1+x}, \frac{1}{2(1+x)})
 
-Original code written by Chris Fonnesbeck.
-Modified by Thomas V. Wiecki.
+Original version written by Flavio Coelho.
+Tweaked by Chris Fonnesbeck.
+Ported to CythonGSL Thomas V. Wiecki.
 '''
 cimport cython
 from cython_gsl cimport *
