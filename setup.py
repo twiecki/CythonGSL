@@ -12,8 +12,8 @@ setup(
     packages=["cython_gsl"],
     package_data={"cython_gsl":["*.pxd"]},
     description="""Cython declarations for the Gnu Scientific Library.""",
-    setup_requires=['Cython'],
-    install_requires=['Cython'],
+    setup_requires=['Cython >= 0.16'],
+    install_requires=['Cython >= 0.16'],
     classifiers=[
                 'Development Status :: 4 - Beta',
                 'Environment :: Console',

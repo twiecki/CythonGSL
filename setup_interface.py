@@ -27,8 +27,8 @@ setup(
     packages=["cython_gsl.interface"],
     package_data={"cython_gsl.interface": ["*.pyx"]},
     description="""Cython declarations for the Gnu Scientific Library.""",
-    setup_requires=['Cython', 'CythonGSL'],
-    install_requires=['Cython', 'CythonGSL'],
+    setup_requires=['Cython >= 0.16', 'CythonGSL'],
+    install_requires=['Cython >= 0.16', 'CythonGSL'],
     classifiers=[
                 'Development Status :: 4 - Beta',
                 'Environment :: Console',
