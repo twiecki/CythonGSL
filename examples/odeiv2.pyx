@@ -26,7 +26,7 @@ cdef int jac (double t,  double y[], double *dfdy, double dfdt[], void *params) 
 def main ( ):
     cdef double mu
     mu = 10
-    cdef gsl_odeiv_system sys
+    cdef gsl_odeiv2_system sys
     sys.function = func
     sys.jacobian = jac
     sys.dimension = 2
@@ -44,9 +44,9 @@ def main ( ):
     y[0] = 1.0
     y[1] = 0.0
 
+    cdef int status
+    cdef double ti
     for i from 1 <= i <= 100:
-        cdef int status
-        cdef double ti
         ti = i * t1 / 100.0
         status = gsl_odeiv2_driver_apply (d, &t, ti, y)
 
