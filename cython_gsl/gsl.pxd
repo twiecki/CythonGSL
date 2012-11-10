@@ -61,6 +61,7 @@ cimport cython_gsl.gsl_histogram
 cimport cython_gsl.gsl_ntuple
 cimport cython_gsl.gsl_monte
 cimport cython_gsl.gsl_odeiv
+cimport cython_gsl.gsl_odeiv2
 cimport cython_gsl.gsl_interp
 cimport cython_gsl.gsl_diff
 cimport cython_gsl.gsl_chebyshev
