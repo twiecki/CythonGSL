@@ -76,6 +76,7 @@ from cython_gsl.gsl_histogram cimport *
 from cython_gsl.gsl_ntuple cimport *
 from cython_gsl.gsl_monte cimport *
 from cython_gsl.gsl_odeiv cimport *
+from cython_gsl.gsl_odeiv2 cimport *
 from cython_gsl.gsl_interp cimport *
 from cython_gsl.gsl_diff cimport *
 from cython_gsl.gsl_chebyshev cimport *
