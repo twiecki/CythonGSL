@@ -5,12 +5,12 @@ from Cython.Distutils import build_ext
 
 setup(
     name="CythonGSL",
-    version="0.2.1alpha",
+    version="0.2.1",
     author="Thomas V. Wiecki",
     author_email="thomas.wiecki@gmail.com",
     url="http://github.com/twiecki/CythonGSL",
     packages=["cython_gsl"],
-    package_data={"cython_gsl":["*.pxd"]},
+    package_data={"cython_gsl": ["*.pxd"]},
     description="""Cython declarations for the Gnu Scientific Library.""",
     setup_requires=['Cython >= 0.16'],
     install_requires=['Cython >= 0.16'],
