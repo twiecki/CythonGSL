@@ -1,1 +1,1 @@
-include GPLv3.txt README.rst CHANGES.rst LICENSE examples/*.py examples/*.pyx cython_gsl/test/*.pyx cython_gsl/test/*.py setup.py setup_test.py
+include GPLv3.txt README.rst CHANGES.rst LICENSE examples/*.py examples/*.pyx cython_gsl/test/*.pyx cython_gsl/test/*.py setup.py setup_test.py cython_gsl/interface/*
