@@ -34,6 +34,9 @@ Fork of PyrexGsl by Mario Pernici
 Usage
 *****
 
+For a quick demo, see:
+http://nbviewer.ipython.org/urls/raw.github.com/twiecki/CythonGSL/master/examples/cython_gsl_ipythonnb.ipynb
+
 Import CythonGSL in your pyx file
 =================================
 
