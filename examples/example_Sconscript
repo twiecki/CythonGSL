@@ -1,0 +1,17 @@
+# This example was provided by Flávio Codeço Coelho
+
+env = Environment()
+env.Decider('MD5')
+
+cybld = Builder(action='cython -v -a -o $TARGET $SOURCE')
+env.Append(BUILDERS={'Cython':cybld}) 
+env.Append(CCFLAGS='-pthread -fno-strict-aliasing -DNDEBUG -g -fwrapv \
+-Wall -Wstrict-prototypes -Wstrict-prototypes -O2 -fPIC \
+-I/usr/local/lib/python2.7/dist-packages/numpy/core/include -I/usr/include \
+-I/usr/include/python2.7/ -I/usr/include/gsl/')
+
+env.Cython('cgillespie.c','cgillespie.pyx')
+env.SharedLibrary('cgillespie',['cgillespie.c'], LIBPREFIX='',
+                LIBS=['gsl','gslcblas'],
+                LIBPATH=['/usr/local/lib/python2.7/dist-packages/numpy/core/include',
+                        '/usr/include','/usr/include/python2.7/','/usr/include/gsl/'])
