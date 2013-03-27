@@ -20,8 +20,10 @@ def get_include():
     if sys.platform == "win32":
         gsl_include = os.getenv('LIB_GSL')
         if gsl_include is None:
-            # Hardcoded paths under windows :-/
+            # Environmental variable LIB_GSL not set, use hardcoded path.
             gsl_include = r"c:\Program Files\GnuWin32\include"
+        else:
+            gsl_include += "/include"
     else:
         gsl_include = os.popen('gsl-config --cflags').read()[2:-1]
 
@@ -33,8 +35,12 @@ def get_library_dir():
     import sys, os
 
     if sys.platform == "win32":
-        # Hardcoded paths under windows :-/
-        lib_gsl_dir = r"c:\Program Files\GnuWin32\lib"
+        lib_gsl_dir = os.getenv('LIB_GSL')
+        if lib_gsl_dir is None:
+            # Environmental variable LIB_GSL not set, use hardcoded path.
+            lib_gsl_dir = r"c:\Program Files\GnuWin32\lib"
+        else:
+            lib_gsl_dir += "/lib"
     else:
         lib_gsl_dir = os.popen('gsl-config --libs').read().split()[0][2:]
 
