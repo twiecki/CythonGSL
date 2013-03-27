@@ -18,8 +18,10 @@ def get_include():
     import sys, os
 
     if sys.platform == "win32":
-        # Hardcoded paths under windows :-/
-        gsl_include = r"c:\Program Files\GnuWin32\include"
+        gsl_include = os.getenv('LIB_GSL')
+        if gsl_include is None:
+            # Hardcoded paths under windows :-/
+            gsl_include = r"c:\Program Files\GnuWin32\include"
     else:
         gsl_include = os.popen('gsl-config --cflags').read()[2:-1]
 
