@@ -19,7 +19,7 @@ from libc.stdio cimport *
 
 cdef enum:
   GSL_SUCCESS = 0
-  GSL_FAILURE  = -1,
+  GSL_FAILURE  = -1
   GSL_CONTINUE = -2  # iteration has not converged
   GSL_EDOM     = 1   # input domain error, e.g sqrt(-1)
   GSL_ERANGE   = 2   # output range error, e.g. exp(1e100)
