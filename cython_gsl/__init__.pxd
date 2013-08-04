@@ -118,3 +118,4 @@ from cython_gsl.gsl_sum cimport *
 from cython_gsl.gsl_roots cimport *
 from cython_gsl.gsl_min cimport *
 from cython_gsl.gsl_fit cimport *
+from cython_gsl.gsl_multimin cimport *
