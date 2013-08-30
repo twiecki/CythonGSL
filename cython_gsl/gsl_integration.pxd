@@ -5,6 +5,7 @@ cdef extern from "gsl/gsl_integration.h":
   ctypedef struct gsl_integration_workspace
   ctypedef struct gsl_integration_qaws_table
   ctypedef struct  gsl_integration_qawo_table
+  ctypedef struct gsl_integration_cquad_workspace
   cdef enum:
     GSL_INTEG_GAUSS15 = 1
     GSL_INTEG_GAUSS21 = 2
@@ -14,6 +15,12 @@ cdef extern from "gsl/gsl_integration.h":
     GSL_INTEG_GAUSS61 = 6
   cdef enum gsl_integration_qawo_enum:
     GSL_INTEG_COSINE, GSL_INTEG_SINE
+  
+  gsl_integration_cquad_workspace *  gsl_integration_cquad_workspace_alloc (size_t n) nogil
+  
+  void  gsl_integration_cquad_workspace_free (gsl_integration_cquad_workspace * w) nogil
+  
+  int gsl_integration_cquad (gsl_function * f, double a, double b, double epsabs, double epsrel, gsl_integration_cquad_workspace * workspace, double * result, double * abserr, size_t * nevals) nogil
 
   int  gsl_integration_qng(gsl_function *f, double a, double b, double epsabs, double epsrel, double * result, double * abserr, size_t * neval) nogil
 
