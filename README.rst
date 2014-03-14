@@ -86,8 +86,8 @@ Dependencies
 
 * Python
 * Cython (http://cython.org)
-* GSL (for a windows port see
-  http://gnuwin32.sourceforge.net/packages/gsl.htm)
+* GSL (for a Windows port see
+  https://code.google.com/p/oscats/downloads/list)
 
 Installing CythonGSL
 ====================
