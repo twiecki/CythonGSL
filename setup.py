@@ -1,7 +1,5 @@
 #!/usr/bin/env python
 from distutils.core import setup
-from Cython.Distutils import Extension
-from Cython.Distutils import build_ext
 
 setup(
     name="CythonGSL",
