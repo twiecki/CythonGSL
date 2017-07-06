@@ -3,7 +3,7 @@ from distutils.core import setup
 
 setup(
     name="CythonGSL",
-    version="0.2.2",
+    version="0.2.3",
     author="Thomas V. Wiecki",
     author_email="thomas.wiecki@gmail.com",
     url="http://github.com/twiecki/CythonGSL",
