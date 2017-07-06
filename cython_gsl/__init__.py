@@ -14,42 +14,44 @@
 #    You should have received a copy of the GNU General Public License
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-def get_include():
-    import sys, os
+import os
+import subprocess
 
-    if sys.platform == "win32":
+
+def get_include():
+    try:
+        gsl_include = subprocess.check_output('gsl-config --cflags', shell=True).decode('utf-8')[2:-1]
+    except OSError:
         gsl_include = os.getenv('LIB_GSL')
         if gsl_include is None:
             # Environmental variable LIB_GSL not set, use hardcoded path.
             gsl_include = r"c:\Program Files\GnuWin32\include"
         else:
             gsl_include += "/include"
-    else:
-        gsl_include = os.popen('gsl-config --cflags').read()[2:-1]
 
     assert gsl_include != '', "Couldn't find gsl. Make sure it's installed and in the path."
 
     return gsl_include
 
-def get_library_dir():
-    import sys, os
 
-    if sys.platform == "win32":
+def get_library_dir():
+    try:
+        lib_gsl_dir = subprocess.check_output('gsl-config --libs', shell=True).decode('utf-8').split()[0][2:]
+    except OSError:
         lib_gsl_dir = os.getenv('LIB_GSL')
         if lib_gsl_dir is None:
             # Environmental variable LIB_GSL not set, use hardcoded path.
             lib_gsl_dir = r"c:\Program Files\GnuWin32\lib"
         else:
             lib_gsl_dir += "/lib"
-    else:
-        lib_gsl_dir = os.popen('gsl-config --libs').read().split()[0][2:]
 
     return lib_gsl_dir
+
 
 def get_libraries():
     return ['gsl', 'gslcblas']
 
-def get_cython_include_dir():
-    import cython_gsl, os.path
-    return os.path.split(cython_gsl.__path__[0])[0]
 
+def get_cython_include_dir():
+    import cython_gsl
+    return os.path.split(cython_gsl.__path__[0])[0]
