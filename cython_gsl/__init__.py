@@ -21,7 +21,7 @@ import subprocess
 def get_include():
     try:
         gsl_include = subprocess.check_output('gsl-config --cflags', shell=True).decode('utf-8')[2:-1]
-    except OSError:
+    except subprocess.CalledProcessError:
         gsl_include = os.getenv('LIB_GSL')
         if gsl_include is None:
             # Environmental variable LIB_GSL not set, use hardcoded path.
@@ -37,7 +37,7 @@ def get_include():
 def get_library_dir():
     try:
         lib_gsl_dir = subprocess.check_output('gsl-config --libs', shell=True).decode('utf-8').split()[0][2:]
-    except OSError:
+    except subprocess.CalledProcessError:
         lib_gsl_dir = os.getenv('LIB_GSL')
         if lib_gsl_dir is None:
             # Environmental variable LIB_GSL not set, use hardcoded path.
