@@ -61,12 +61,3 @@ cdef extern from "gsl/gsl_integration.h":
   int  gsl_integration_qawo(gsl_function * f, double a, double epsabs, double epsrel, size_t limit, gsl_integration_workspace * workspace, gsl_integration_qawo_table * wf, double *result, double *abserr) nogil
 
   int  gsl_integration_qawf(gsl_function * f, double a, double epsabs, size_t limit, gsl_integration_workspace * workspace, gsl_integration_workspace * cycle_workspace, gsl_integration_qawo_table * wf, double *result, double *abserr) nogil
-
-  double GSL_EMAXITER
-
-  double GSL_EROUND
-
-  double GSL_ESING
-
-  double GSL_EDIVERGE
-
