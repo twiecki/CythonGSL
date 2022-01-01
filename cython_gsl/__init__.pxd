@@ -123,3 +123,4 @@ from cython_gsl.gsl_multifit_nlin cimport *
 from cython_gsl.gsl_spmatrix cimport *
 from cython_gsl.gsl_spblas cimport *
 from cython_gsl.gsl_splinalg cimport *
+from cython_gsl.gsl_dht cimport *
