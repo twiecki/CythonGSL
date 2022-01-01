@@ -103,3 +103,4 @@ cimport cython_gsl.gsl_sum
 cimport cython_gsl.gsl_roots
 cimport cython_gsl.gsl_min
 cimport cython_gsl.gsl_fit
+cimport cython_gsl.gsl_dht
