@@ -3,7 +3,7 @@ cdef extern from "gsl/gsl_rstat.h":
     ctypedef struct gsl_rstat_workspace
     ctypedef struct gsl_rstat_quantile_workspace
 
-    gsl_rstat_workspace * gsl_rstat_alloc (void) nogil
+    gsl_rstat_workspace * gsl_rstat_alloc () nogil
     gsl_rstat_quantile_workspace * gsl_rstat_quantile_alloc (double p) nogil
 
     void gsl_rstat_free (gsl_rstat_workspace * w) nogil
